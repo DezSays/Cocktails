@@ -1,0 +1,17 @@
+.path{
+    color:black;
+    font-size: medium;
+    text-decoration: none;
+    margin: 0px 15px;
+ 
+}
+#responsive-navbar-nav{
+    justify-content: flex-end;
+
+}
+nav{
+    height:20%
+}
+.title-nav{
+    font-weight: 500;
+}

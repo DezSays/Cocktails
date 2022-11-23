@@ -1,13 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Layout from './components/layout/Layout';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Favorites from './components/Favorites'
+import Recipes from './components/Recipes'
+import App from './App';
+import Footer from './components/Footer';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+       <Router>
+        <Layout>
+          <Routes>
+              <Route path='/' element={<App />} />
+              <Route path='/Favorites' element={<Favorites />} />
+              <Route path='/Recipes' element={<Recipes />} />
+          </Routes>
+        </Layout>
+    </Router>
+    <Footer />
   </React.StrictMode>
 );
 

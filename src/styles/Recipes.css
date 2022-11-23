@@ -1,0 +1,18 @@
+#cocktail-name{
+    font-weight: 600;
+    font-size:x-large;
+    text-align: center;
+}
+
+#cocktail-instructions{
+    font-style: italic;
+    text-align: center;
+    margin: 2% 25%;
+}
+
+img{
+    max-height: 50vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
