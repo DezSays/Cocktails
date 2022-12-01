@@ -7,7 +7,7 @@
 #cocktail-instructions{
     font-style: italic;
     text-align: center;
-    margin: 2% 25%;
+    margin: 0% 25%;
 }
 
 img{
@@ -15,4 +15,11 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
+
+}
+.measurements-and-ingredients{
+    margin:1% 10%;
+    text-align: center;
+    font-size: small;
+    line-height: 0%;
 }
