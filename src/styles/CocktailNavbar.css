@@ -5,6 +5,10 @@
     margin: 0px 15px;
  
 }
+.fa-cocktail{
+    transform: rotate(15deg);
+}
+
 #responsive-navbar-nav{
     justify-content: flex-end;
 

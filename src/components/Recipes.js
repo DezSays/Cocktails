@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
+import {FaCocktail} from 'react-icons/fa'
 import '../styles/Recipes.css'
-
 
 const Recipes = () => {
 
@@ -38,6 +38,7 @@ const Recipes = () => {
     const [ingredientList14, setIngredientList14] = useState('')
     const [measurements15, setMeasurements15] = useState('')
     const [ingredientList15, setIngredientList15] = useState('')
+    const [ingredientTitle, setIngredientTitle] = useState('')
 
     const fetchCocktails = async() => {
 
@@ -85,16 +86,19 @@ const Recipes = () => {
             const strIngredient15 = cocktailList.drinks[0].strIngredient15;
 
             if(strMeasure1 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
             }
             if(strMeasure2 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
                 setMeasurements2(strMeasure2)
             }
             if(strMeasure3 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -103,6 +107,7 @@ const Recipes = () => {
                 setMeasurements3(strMeasure3)
             }
             if(strMeasure4 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -113,6 +118,7 @@ const Recipes = () => {
                 setMeasurements4(strMeasure4)
             }
             if(strMeasure5 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -125,6 +131,7 @@ const Recipes = () => {
                 setMeasurements5(strMeasure5)
             }
             if(strMeasure6 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -139,6 +146,7 @@ const Recipes = () => {
                 setMeasurements6(strMeasure6)
             }
             if(strMeasure7 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -155,6 +163,7 @@ const Recipes = () => {
                 setMeasurements7(strMeasure7)
             }
             if(strMeasure8 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -173,6 +182,7 @@ const Recipes = () => {
                 setMeasurements8(strMeasure8)
             }
             if(strMeasure9 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -193,6 +203,7 @@ const Recipes = () => {
                 setMeasurements9(strMeasure9)
             }
             if(strMeasure10 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -215,6 +226,7 @@ const Recipes = () => {
                 setMeasurements10(strMeasure10)
             }
             if(strMeasure11 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -239,6 +251,7 @@ const Recipes = () => {
                 setMeasurements11(strMeasure11)
             }
             if(strMeasure12 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -265,6 +278,7 @@ const Recipes = () => {
                 setMeasurements12(strMeasure12)
             }
             if(strMeasure13 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -293,6 +307,7 @@ const Recipes = () => {
                 setMeasurements13(strMeasure13)
             }
             if(strMeasure14 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -323,6 +338,7 @@ const Recipes = () => {
                 setMeasurements14(strMeasure14)
             }
             if(strMeasure15 != null){
+                setIngredientTitle('Ingredients')
                 setIngredientList1(strIngredient1)
                 setMeasurements1(strMeasure1)
                 setIngredientList2(strIngredient2)
@@ -366,11 +382,13 @@ const Recipes = () => {
     }
   return (
     <>
-    <button onClick={fetchCocktails}>Ingredients</button>
-    <input type='text' placeholder='Mojito' value={userCocktailName} id='user-cocktail-name' onChange={e => setUserCocktailName(e.target.value)} />
-    <button type='submit' id='user-cocktail-submit' onClick={fetchCocktails}>Submit</button>
+    <div id='search-bar'>
+        <input type='text' placeholder='Mojito' value={userCocktailName} id='user-cocktail-name' onChange={e => setUserCocktailName(e.target.value)} />
+        <button type='submit' id='user-cocktail-submit' onClick={fetchCocktails}>Search <FaCocktail /></button>
+    </div>
         <p id='cocktail-name'>{cocktailName}</p>
         <img alt={cocktailName} src={imgTag} />
+        <h6 className='ingredients-title'>{ingredientTitle}</h6>
         <div className='measurements-and-ingredients'><p><span>{measurements1}</span><span>{ingredientList1}</span></p>
         <p><span>{measurements2}</span><span>{ingredientList2}</span></p>
         <p><span>{measurements3}</span><span>{ingredientList3}</span></p>
