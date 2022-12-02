@@ -10,11 +10,11 @@
 }
 #search-bar{
     text-align: right;
-    margin: 1%;
+    margin: 1% 7%;
 }
 #user-cocktail-name{
     margin-right:.5%;
-    width:33%
+    width:20%
 }
 img{
     max-height: 50vh;
