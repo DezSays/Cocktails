@@ -6,7 +6,7 @@
 #cocktail-instructions{
     font-style: italic;
     text-align: center;
-    margin: 1% 25%;
+    margin: 1% 25% 5%;
 }
 #search-bar{
     text-align: right;
@@ -31,4 +31,11 @@ img{
 }
 .ingredients-title{
     text-align: center;
+    margin: 2% 0% 1%;
+    text-decoration: underline;
 }
+@media only screen and (max-width: 900px) {
+    .ingredients-title{
+        margin: 2% 0% 2%;
+    }
+  }

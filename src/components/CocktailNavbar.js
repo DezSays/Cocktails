@@ -17,7 +17,7 @@ const CocktailNavbar = () => {
           <Nav className="ml-auto">
             <Link to="/" className='path'>Home</Link>
             <Link to="/Recipes" className='path'>Search Recipes</Link>
-            <Link to="/Favorites" className='path'>Favorites</Link>
+            <Link to="/BrowseCocktails" className='path'>Browse Cocktails</Link>
           </Nav>
         </Navbar.Collapse>
     </Container>

@@ -5,7 +5,7 @@ import Layout from './components/layout/Layout';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Favorites from './components/Favorites'
+import BrowseCocktails from './components/BrowseCocktails'
 import Recipes from './components/Recipes'
 import App from './App';
 import Footer from './components/Footer';
@@ -19,7 +19,7 @@ root.render(
         <Layout>
           <Routes>
               <Route path='/' element={<App />} />
-              <Route path='/Favorites' element={<Favorites />} />
+              <Route path='/BrowseCocktails' element={<BrowseCocktails />} />
               <Route path='/Recipes' element={<Recipes />} />
           </Routes>
         </Layout>
