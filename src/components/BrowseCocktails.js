@@ -4,14 +4,14 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector} from 'react-redux'
-import incrementCount from '../actions/incrementCount' //this is our action
+import incrementCount from '../actions/incrementCount' 
 
 
 const BrowseCocktails = () => {
 
   
-  const dispatch = useDispatch();// access the store.dispatch()  to dispatch actions 
-  const count = useSelector(state => state.count) //count mapped from global state 
+  const dispatch = useDispatch(); 
+  const count = useSelector(state => state.count) 
 
   const [cocktailTitle1, setCocktailTitle1] = useState("")
   const [cocktailImage1, setCocktailImage1] = useState("")
