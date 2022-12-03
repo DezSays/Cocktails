@@ -6,10 +6,6 @@ import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector} from 'react-redux'
 import incrementCount from '../actions/incrementCount' //this is our action
 
-// TODO //
-// use this page to fulfill the redux requirement
-// https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11000
-// useDispatch,
 
 const BrowseCocktails = () => {
 
