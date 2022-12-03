@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import '../styles/BrowseCocktails.css'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -10,6 +10,13 @@ import Row from 'react-bootstrap/Row';
 
 
 const BrowseCocktails = () => {
+
+  const [cocktailTitle1, setCocktailTitle1] = useState("")
+
+  const [cocktailImage1, setCocktailImage1] = useState("")
+
+  const [cocktailInstructions1, setCocktailInstructions1] = useState("")
+
   const fetchCocktailByID = async() => {
 
     const cocktailInfo = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11000`)
@@ -18,32 +25,136 @@ const BrowseCocktails = () => {
 
     const cocktailName = cocktailData.drinks[0].strDrink
 
+    const cocktailImg = cocktailData.drinks[0].strDrinkThumb
+
+    const cocktailDescription = cocktailData.drinks[0].strInstructions
+
     console.log(cocktailName)
 
     // "strDrink": "Mojito",
     // "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg",
 
+    setCocktailTitle1(cocktailName)
+    setCocktailImage1(cocktailImg)
+    setCocktailInstructions1(cocktailDescription)
+
   }
   return (
     <>
-    <button onClick={fetchCocktailByID}>clg name</button>
-    <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 8 }).map((_, idx) => (
+
+    <Row xs={1} md={3} className="g-4">
+
         <Col>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>{cocktailTitle1}</Card.Title>
               <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+                {cocktailInstructions1}
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
-      ))}
+
+        <Col>
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
+            <Card.Body>
+              <Card.Title>{cocktailTitle1}</Card.Title>
+              <Card.Text>
+                {cocktailInstructions1}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
+            <Card.Body>
+              <Card.Title>{cocktailTitle1}</Card.Title>
+              <Card.Text>
+                {cocktailInstructions1}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
+            <Card.Body>
+              <Card.Title>{cocktailTitle1}</Card.Title>
+              <Card.Text>
+                {cocktailInstructions1}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
+            <Card.Body>
+              <Card.Title>{cocktailTitle1}</Card.Title>
+              <Card.Text>
+                {cocktailInstructions1}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
+            <Card.Body>
+              <Card.Title>{cocktailTitle1}</Card.Title>
+              <Card.Text>
+                {cocktailInstructions1}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
+            <Card.Body>
+              <Card.Title>{cocktailTitle1}</Card.Title>
+              <Card.Text>
+                {cocktailInstructions1}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
+            <Card.Body>
+              <Card.Title>{cocktailTitle1}</Card.Title>
+              <Card.Text>
+                {cocktailInstructions1}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card className='card-container'>
+            <Card.Img className='card-image' variant="top" src={cocktailImage1} />
+            <Card.Body>
+              <Card.Title>{cocktailTitle1}</Card.Title>
+              <Card.Text>
+                {cocktailInstructions1}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
     </Row>
+<button onClick={fetchCocktailByID}>clg name</button>
+<br/>
 <br/>
 <br/>
     </>

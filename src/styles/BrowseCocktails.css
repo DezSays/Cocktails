@@ -1,0 +1,12 @@
+.card-image{
+    width:50%
+}
+
+.card-container{
+    width:80%;
+    margin: 5% 10% 0%
+}
+
+body{
+    overflow-x: hidden;
+}
