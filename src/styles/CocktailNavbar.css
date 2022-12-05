@@ -14,7 +14,8 @@
 
 }
 nav{
-    height:20%
+    height:20%;
+    width:100vw
 }
 .title-nav{
     font-weight: 500;
