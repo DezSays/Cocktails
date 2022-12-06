@@ -4,7 +4,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector} from 'react-redux'
-import incrementCount from '../actions/incrementCount' 
+import incrementCount from '../actions/incrementCount.js' 
+import decrementCount from '../actions/decrementCount.js' 
 
 
 const BrowseCocktails = () => {
@@ -55,13 +56,12 @@ const BrowseCocktails = () => {
     setCocktailTitle3(cocktailName3)
     setCocktailImage3(cocktailImg3)
     setCocktailInstructions3(cocktailDescription3)
-
-
-
-
   }
+
+  fetchCocktailByID()
+  
   return (
-    <div onLoad={fetchCocktailByID()}>
+    <div>
 
     <Row xs={1} md={3} className="g-4">
 
@@ -103,7 +103,10 @@ const BrowseCocktails = () => {
 
 
     </Row>
-    <button onClick={()=>dispatch(incrementCount(3))}>Increment</button>
+    <div className='update-value-div'>
+      <button className='update-value-button-left' onClick={()=>dispatch(decrementCount(3))}>Previous</button>
+      <button className='update-value-button-right' onClick={()=>dispatch(incrementCount(3))}>Next</button>
+    </div>
     <br/>
     <br/>
     <br/>

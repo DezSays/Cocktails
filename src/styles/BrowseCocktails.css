@@ -10,3 +10,15 @@
 div.col{
     overflow-x: hidden;
 }
+
+.update-value-div{
+    text-align: center;
+}
+
+.update-value-button-left{
+    margin:2% 10%
+}
+
+.update-value-button-right{
+    margin:2% 10%
+}

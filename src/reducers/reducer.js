@@ -18,6 +18,12 @@ const reducer = (state, action) => {
                 count: state.count + action.data
             }
 
+        case "DECREMENT": 
+            return {
+                ...state, 
+                count: state.count - action.data
+            }
+
         default: 
             return state;
     }
