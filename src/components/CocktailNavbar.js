@@ -16,8 +16,7 @@ const CocktailNavbar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <Link to="/" className='path'>Home</Link>
-            <Link to="/Recipes" className='path'>Search Recipes</Link>
-            <Link to="/BrowseCocktails" className='path'>Cocktail Library</Link>
+            <Link to="/CocktailLibrary" className='path'>Cocktail Library</Link>
           </Nav>
         </Navbar.Collapse>
     </Container>

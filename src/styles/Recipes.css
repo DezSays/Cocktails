@@ -1,16 +1,18 @@
 #cocktail-name{
     font-weight: 600;
-    font-size:x-large;
+    font-size:xx-large;
     text-align: center;
+    color:white;
 }
 #cocktail-instructions{
     font-style: italic;
     text-align: center;
     margin: 1% 25% 5%;
+    color:white;
 }
 #search-bar{
     text-align: right;
-    margin: 1% 7%;
+    margin: 1% 7% 0%;
 }
 #user-cocktail-name{
     margin-right:.5%;
@@ -28,11 +30,13 @@ img{
     text-align: center;
     font-size: small;
     line-height: 0%;
+    color:white;
 }
 .ingredients-title{
     text-align: center;
     margin: 2% 0% 1%;
     text-decoration: underline;
+    color:white;
 }
 @media only screen and (max-width: 900px) {
     .ingredients-title{

@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector} from 'react-redux'
 import incrementCount from '../actions/incrementCount.js' 
 import decrementCount from '../actions/decrementCount.js' 
+import Recipes from './Recipes';
+
 
 
 const BrowseCocktails = () => {
@@ -59,10 +61,10 @@ const BrowseCocktails = () => {
   }
 
   fetchCocktailByID()
-  
+
   return (
     <div>
-
+      <Recipes />
     <Row xs={1} md={3} className="g-4">
 
         <Col>

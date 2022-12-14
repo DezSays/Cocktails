@@ -1,13 +1,10 @@
-import React, {useState} from 'react'
-import {FaCocktail} from 'react-icons/fa'
-import '../styles/Recipes.css'
+import React, {useState,useEffect} from 'react'
 
-const Recipes = () => {
 
-    const [imgTag, setImgTag] = useState('')
+const Home = () => {
     const [cocktailName, setCocktailName] = useState('')
+    const [imgTag, setImgTag] = useState('')
     const [cocktailInstructions, setCocktailInstructions] = useState('')
-    const [userCocktailName, setUserCocktailName] = useState('')
     const [measurements1, setMeasurements1] = useState('')
     const [ingredientList1, setIngredientList1] = useState('')
     const [measurements2, setMeasurements2] = useState('')
@@ -40,50 +37,60 @@ const Recipes = () => {
     const [ingredientList15, setIngredientList15] = useState('')
     const [ingredientTitle, setIngredientTitle] = useState('')
 
-    const fetchCocktails = async() => {
 
-        const cocktails = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userCocktailName}`) 
-    
-        const cocktailList = await cocktails.json()
+      useEffect(() => {
+        fetchCocktailByID()
+      }, [])
+      
 
-        const directions = cocktailList.drinks[0].strInstructions
 
-        const name = cocktailList.drinks[0].strDrink
+    const fetchCocktailByID = async() => {
 
-        const img = cocktailList.drinks[0].strDrinkThumb
+        function randInt(min, max) { 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+          }
+          const count = randInt(11000, 11050)
 
-        const finalMeasurements = () => {
-            const strMeasure1 = cocktailList.drinks[0].strMeasure1;
-            const strMeasure2 = cocktailList.drinks[0].strMeasure2;
-            const strMeasure3 = cocktailList.drinks[0].strMeasure3;
-            const strMeasure4 = cocktailList.drinks[0].strMeasure4;
-            const strMeasure5 = cocktailList.drinks[0].strMeasure5;
-            const strMeasure6 = cocktailList.drinks[0].strMeasure6;
-            const strMeasure7 = cocktailList.drinks[0].strMeasure7;
-            const strMeasure8 = cocktailList.drinks[0].strMeasure8;
-            const strMeasure9 = cocktailList.drinks[0].strMeasure9;
-            const strMeasure10 = cocktailList.drinks[0].strMeasure10;
-            const strMeasure11 = cocktailList.drinks[0].strMeasure11;
-            const strMeasure12 = cocktailList.drinks[0].strMeasure12;
-            const strMeasure13 = cocktailList.drinks[0].strMeasure13;
-            const strMeasure14 = cocktailList.drinks[0].strMeasure14;
-            const strMeasure15 = cocktailList.drinks[0].strMeasure15;
 
-            const strIngredient1 = cocktailList.drinks[0].strIngredient1;
-            const strIngredient2 = cocktailList.drinks[0].strIngredient2;
-            const strIngredient3 = cocktailList.drinks[0].strIngredient3;
-            const strIngredient4 = cocktailList.drinks[0].strIngredient4;
-            const strIngredient5 = cocktailList.drinks[0].strIngredient5;
-            const strIngredient6 = cocktailList.drinks[0].strIngredient6;
-            const strIngredient7 = cocktailList.drinks[0].strIngredient7;
-            const strIngredient8 = cocktailList.drinks[0].strIngredient8;
-            const strIngredient9 = cocktailList.drinks[0].strIngredient9;
-            const strIngredient10 = cocktailList.drinks[0].strIngredient10;
-            const strIngredient11 = cocktailList.drinks[0].strIngredient11;
-            const strIngredient12 = cocktailList.drinks[0].strIngredient12;
-            const strIngredient13 = cocktailList.drinks[0].strIngredient13;
-            const strIngredient14 = cocktailList.drinks[0].strIngredient14;
-            const strIngredient15 = cocktailList.drinks[0].strIngredient15;
+        const cocktailData = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${count}`)
+        const cocktails = await cocktailData.json()
+        const name = cocktails.drinks[0].strDrink
+        const directions = cocktails.drinks[0].strInstructions
+        const img = cocktails.drinks[0].strDrinkThumb
+
+
+                const finalMeasurements = () => {
+            const strMeasure1 = cocktails.drinks[0].strMeasure1;
+            const strMeasure2 = cocktails.drinks[0].strMeasure2;
+            const strMeasure3 = cocktails.drinks[0].strMeasure3;
+            const strMeasure4 = cocktails.drinks[0].strMeasure4;
+            const strMeasure5 = cocktails.drinks[0].strMeasure5;
+            const strMeasure6 = cocktails.drinks[0].strMeasure6;
+            const strMeasure7 = cocktails.drinks[0].strMeasure7;
+            const strMeasure8 = cocktails.drinks[0].strMeasure8;
+            const strMeasure9 = cocktails.drinks[0].strMeasure9;
+            const strMeasure10 = cocktails.drinks[0].strMeasure10;
+            const strMeasure11 = cocktails.drinks[0].strMeasure11;
+            const strMeasure12 = cocktails.drinks[0].strMeasure12;
+            const strMeasure13 = cocktails.drinks[0].strMeasure13;
+            const strMeasure14 = cocktails.drinks[0].strMeasure14;
+            const strMeasure15 = cocktails.drinks[0].strMeasure15;
+
+            const strIngredient1 = cocktails.drinks[0].strIngredient1;
+            const strIngredient2 = cocktails.drinks[0].strIngredient2;
+            const strIngredient3 = cocktails.drinks[0].strIngredient3;
+            const strIngredient4 = cocktails.drinks[0].strIngredient4;
+            const strIngredient5 = cocktails.drinks[0].strIngredient5;
+            const strIngredient6 = cocktails.drinks[0].strIngredient6;
+            const strIngredient7 = cocktails.drinks[0].strIngredient7;
+            const strIngredient8 = cocktails.drinks[0].strIngredient8;
+            const strIngredient9 = cocktails.drinks[0].strIngredient9;
+            const strIngredient10 = cocktails.drinks[0].strIngredient10;
+            const strIngredient11 = cocktails.drinks[0].strIngredient11;
+            const strIngredient12 = cocktails.drinks[0].strIngredient12;
+            const strIngredient13 = cocktails.drinks[0].strIngredient13;
+            const strIngredient14 = cocktails.drinks[0].strIngredient14;
+            const strIngredient15 = cocktails.drinks[0].strIngredient15;
 
             if(strMeasure1 != null){
                 setIngredientTitle('Ingredients')
@@ -377,25 +384,14 @@ const Recipes = () => {
         setCocktailName(name)
         setCocktailInstructions(directions)
         setImgTag(img)
-        
+
 
     }
-    function searchKeyPress(e) {
+    
 
-        e = e || window.event;
-        if (e.keyCode === 13) //13 is the key code for enter
-        {
-            document.getElementById('user-cocktail-submit').click();
-            return false;
-        }
-        return true;
-    }
+
   return (
-    <>
-    <div id='search-bar'>
-        <input type='text' placeholder='Mojito' value={userCocktailName} id='user-cocktail-name' onChange={e => setUserCocktailName(e.target.value)} onKeyUp={searchKeyPress}/>
-        <button type='submit' id='user-cocktail-submit' onClick={fetchCocktails}>Search <FaCocktail /></button>
-    </div>
+    <div>
         <p id='cocktail-name'>{cocktailName}</p>
         <img alt={cocktailName} src={imgTag} />
         <h6 className='ingredients-title'>{ingredientTitle}</h6>
@@ -415,10 +411,8 @@ const Recipes = () => {
         <p><span>{measurements14}</span><span>{ingredientList14}</span></p>
         <p><span>{measurements15}</span><span>{ingredientList15}</span></p></div>
         <p id='cocktail-instructions'>{cocktailInstructions}</p>
-    
-
-    </>
+    </div>
   )
 }
 
-export default Recipes
+export default Home

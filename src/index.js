@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import BrowseCocktails from './components/BrowseCocktails'
-import Recipes from './components/Recipes'
+
 import App from './App';
 import Footer from './components/Footer';
 import {createStore} from 'redux'; 
@@ -24,8 +24,7 @@ root.render(
         <Layout>
           <Routes>
               <Route path='/' element={<App />} />
-              <Route path='/BrowseCocktails' element={<BrowseCocktails />} />
-              <Route path='/Recipes' element={<Recipes />} />
+              <Route path='/CocktailLibrary' element={<BrowseCocktails />} />
           </Routes>
         </Layout>
     </Router>
