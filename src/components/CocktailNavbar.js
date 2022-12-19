@@ -11,7 +11,7 @@ const CocktailNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="warning" variant="light">
     <Container>
-      <Navbar.Brand href="/"><span className='title-nav'>DezSays </span><FaCocktail className='fa-cocktail' size={20} /></Navbar.Brand>
+      <Navbar.Brand href="/"><span className='title-nav'>Simple-Bar </span><FaCocktail className='fa-cocktail' size={20} /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
