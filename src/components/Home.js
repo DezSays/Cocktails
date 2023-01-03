@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
-
+// Debug: Not loading in with image all the time -- see what is causing this
+// Add buy me a coffee link
 
 const Home = () => {
     const [cocktailName, setCocktailName] = useState('')
